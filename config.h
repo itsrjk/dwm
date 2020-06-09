@@ -84,6 +84,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	/* Media Keys */
+	{ 0, XF86XK_MonBrightnessUp,     spawn,        SHCMD("xbacklight -inc 5") },
+	{ 0, XF86XK_MonBrightnessDown,   spawn,        SHCMD("xbacklight -dec 5") },
+	{ 0, XF86XK_AudioMute,           spawn,        SHCMD("amixer set Master toggle") },
+        { 0, XF86XK_AudioRaiseVolume,    spawn,        SHCMD("amixer set Master 5%+") },
+	{ 0, XF86XK_AudioLowerVolume,    spawn,        SHCMD("amixer set Master 5%-") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

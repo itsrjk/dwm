@@ -91,9 +91,9 @@ static Key keys[] = {
 	/* Media Keys */
 	{ 0, XF86XK_MonBrightnessUp,     spawn,        SHCMD("xbacklight -inc 5") },
 	{ 0, XF86XK_MonBrightnessDown,   spawn,        SHCMD("xbacklight -dec 5") },
-	{ 0, XF86XK_AudioMute,           spawn,        SHCMD("amixer set Master toggle") },
-        { 0, XF86XK_AudioRaiseVolume,    spawn,        SHCMD("amixer set Master 5%+") },
-	{ 0, XF86XK_AudioLowerVolume,    spawn,        SHCMD("amixer set Master 5%-") },
+	{ 0, XF86XK_AudioMute,           spawn,        SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle") },
+        { 0, XF86XK_AudioRaiseVolume,    spawn,        SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5000") },
+	{ 0, XF86XK_AudioLowerVolume,    spawn,        SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5000") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
